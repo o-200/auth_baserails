@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: user_params[:email])
 
     if @user && @user.password == user_params[:password]
-      cookies[:user_id] = @user.id
+        session[:user_id] = @user.id
       redirect_to posts_path
     else
       flash.now[:notice] = "Invalid email or password"

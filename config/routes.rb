@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get "/register", to: "users#new"
   get "/sign_in", to: "sessions#new"
 
-
+  root 'posts#index'
 end
